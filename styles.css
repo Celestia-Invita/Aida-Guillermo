@@ -12,7 +12,7 @@ body{
     background-attachment: fixed;
     background-position:top;
     background-size:cover;
-    color: #360909;
+    color: #2d2d2d;
     }
 
 .caja-video{
@@ -157,6 +157,25 @@ h21{
     text-align: center;
 }
 
+.lavishly {
+  font-family: "Lavishly Yours", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tangerine-regular {
+  font-family: "Tangerine", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tangerine-bold {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
 
 
 a{
@@ -294,12 +313,12 @@ h3{
 }
 
 .cita{
-    font-family: Sacramento  ;
+    font-family: "Tangerine", cursive;
     font-size: 40px;
     font-style:oblique;
-    line-height: 0.9cm ;
+    /*line-height: 0.9cm ; esto para cuando esté muy separada la letra (en altura)*/
     padding: 0.3cm;
-    color: #291c04
+    color: #2d2d2d
 }
 
 .cita0{
@@ -427,14 +446,14 @@ h4{
 .boton-oro-rosa {
     background: linear-gradient(
         135deg,
-        #5a3a2b 0%,     /* sombra profunda */
-        #b8745f 15%,    /* cobre oscuro */
-        #f3c7b5 30%,    /* brillo rosado */
-        #d9a18f 45%,    /* oro rosa */
-        #b97a66 55%,    /* sombra cálida */
-        #f0c2ae 70%,    /* reflejo metálico */
-        #9e5f4a 85%,    /* borde oscuro */
-        #5a3a2b 100%    /* cierre */
+        #6f4a3a 0%,     /* sombra suavizada */
+        #c78670 15%,    /* cobre medio */
+        #f4d0c2 30%,    /* brillo rosado */
+        #e2b1a0 45%,    /* oro rosa principal */
+        #c98773 55%,    /* sombra cálida */
+        #f2c9ba 70%,    /* reflejo metálico */
+        #b3725d 85%,    /* borde medio */
+        #6f4a3a 100%    /* cierre */
     );
 
     display: inline-block;
@@ -443,12 +462,12 @@ h4{
     padding: 8px 15px;
     border-radius: 18px;
 
-    border: 1px solid #8b5a4a;
+    border: 1px solid #a56b58;
 
     box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.75), /* brillo superior */
-        inset 0 -4px 6px rgba(0,0,0,0.45),      /* sombra inferior */
-        0 6px 14px rgba(0,0,0,0.35);
+        inset 0 2px 3px rgba(255,255,255,0.75),
+        inset 0 -4px 6px rgba(0,0,0,0.35),
+        0 6px 14px rgba(0,0,0,0.3);
 }
 
 
