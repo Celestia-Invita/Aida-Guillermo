@@ -422,6 +422,51 @@ h4{
 
 
 
+.boton-oro-rosa {
+    background: linear-gradient(135deg,
+        #f6c1cc,
+        #e8a1b0,
+        #d88c9a,
+        #e8a1b0,
+        #f6c1cc
+    );
+    color: #ffffff;
+    font-family: 'Georgia', serif; /* puedes cambiarla */
+    font-size: 18px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 
+        0 4px 8px rgba(216, 140, 154, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.boton-oro-rosa:hover {
+    background: linear-gradient(135deg,
+        #f9d3db,
+        #ebb0bd,
+        #e09aa8,
+        #ebb0bd,
+        #f9d3db
+    );
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 12px rgba(216, 140, 154, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.boton-oro-rosa:active {
+    transform: translateY(0);
+    box-shadow:
+        0 3px 6px rgba(216, 140, 154, 0.5),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
 
 .destello-img {
     width: 40px;
