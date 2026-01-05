@@ -177,6 +177,26 @@ h21{
   font-style: normal;
 }
 
+.italiano {
+  font-family: "Italianno", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.aref {
+  font-family: "Aref Ruqaa", serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.aref-ruqaa-bold {
+  font-family: "Aref Ruqaa", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 a{
     text-decoration: none;
@@ -203,10 +223,17 @@ a{
 }
 
 .padrinos{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    font-style: oblique;
-    padding-top: 0.7cm ;
+    font-family:'Italianno', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+
+}
+
+.papas{
+    font-family:'Italianno', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    padding-top: 0px;
 }
 
 .n-padrinos{
@@ -214,52 +241,10 @@ a{
     font-size: 16px;
     font-style: normal;
     color: #291c04;
+    padding-top: 0px;
+    padding-bottom: 10px;
 }
 
-
-
-.padrinoss {
-  text-align: center;
-}
-
-.pareja {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  
-  margin: 0 auto 20px;
-}
-
-.nombre {
-  /*flex: 1;*/
-  text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    color: #291c04;
-}
-
-.izquierda {
-  justify-self: end;
-}
-
-.derecha {
-  justify-self: start;
-}
-
-
-.guion {
-  padding: 0 0.3em; /* espacio tipo "espacio normal" */
-  font-size: 1.4rem;
-}
-.guion {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    font-style: normal;
-    color: #291c04;
-  margin: 0 0;
-    padding: 0 0.3em; /* espacio tipo "espacio normal" */
-}
 
 
 
