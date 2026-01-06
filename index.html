@@ -111,19 +111,18 @@
     <div class="caja-t3">
         <h3>Galería</h3>
         <img src="camara.png" alt="imgcámara" width="120">
-        
-        <div class="slider">
-            <div class="slider-track">
-                <div class="slide"><img src="G-1.jpg" alt=""></div>
-                <div class="slide"><img src="G-2.jpg" alt=""></div>
-                <div class="slide"><img src="G-3.jpg" alt=""></div>
-                <div class="slide"><img src="G-4.jpeg" alt=""></div>
-                <div class="slide"><img src="G-5.jpg" alt=""></div>
-                <div class="slide"><img src="G-6.jpeg" alt=""></div>
-                <div class="slide"><img src="G-7.jpg" alt=""></div>
-                </div>
-        </div>
-        
+
+        <div class="galeria-collage">
+    <img src="G-1.jpg" class="foto horizontal">
+    <img src="G-2.jpg" class="foto vertical">
+    <img src="G-3.jpg" class="foto vertical">
+    <img src="G-4.jpg" class="foto horizontal">
+    <img src="G-5.jpeg" class="foto vertical">
+    <img src="G-6.jpeg" class="foto vertical">
+    <img src="G-7.jpeg" class="foto vertical">
+</div>
+
+
     </div>
 
     <div class="caja-cita">
@@ -139,7 +138,7 @@
         <p class="anotacion">Nos reservamos los colores Blanco, Rojo y Pink Golden</p>
         <div class="paleta-colores">
             <span class="color" style="--c:#ffffff;"></span>
-            <span class="color" style="--c:#ff0000;"></span>
+            <span class="color" style="--c:#df1414;"></span>
             <span class="color" style="--c:linear-gradient(
                 135deg,
                 #8a5a46,
@@ -202,6 +201,18 @@ function actualizarSlideCentral() {
 track.addEventListener('scroll', actualizarSlideCentral);
 window.addEventListener('load', actualizarSlideCentral);
 </script>
+
+
+<script>
+    const fotos = document.querySelectorAll('.galeria-collage .foto');
+
+    fotos.forEach(foto => {
+        foto.addEventListener('click', () => {
+            foto.classList.toggle('activa');
+        });
+    });
+</script>
+
 
 </body>
 </html>
