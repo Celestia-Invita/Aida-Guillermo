@@ -378,7 +378,7 @@ h4{
 
 .foto {
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 6px 14px rgba(0,0,0,0.28);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
