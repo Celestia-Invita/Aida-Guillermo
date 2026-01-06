@@ -413,16 +413,13 @@ h4{
 
 .foto.activa {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100vw !important;
     height: 100vh !important;
 
     max-width: none !important;
     max-height: none !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -435,7 +432,23 @@ h4{
     background: transparent;
 
     cursor: zoom-out;
+
+    /* 🔑 ESTO ES LO QUE LO ARREGLA */
+    transform: none !important;
+    animation: none !important;
 }
+
+
+.foto.activa {
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
 
 body.modal-abierto {
     overflow: hidden;
@@ -457,21 +470,6 @@ body.modal-abierto {
 
 .foto {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.foto.activa {
-    animation: zoomIn 0.25s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 
