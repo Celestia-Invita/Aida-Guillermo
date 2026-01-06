@@ -366,50 +366,48 @@ h4{
 
 /*ESTO ES PARA LA GALERÍA*/
 
-
 .galeria-collage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;          /* juntas pero respirando */
+    gap: 12px;
     padding: 20px;
 }
-
 
 .foto {
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 6px 14px rgba(0,0,0,0.28);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Horizontales más protagonistas */
+/* Tamaños collage */
 .foto.horizontal {
     width: 60%;
-    max-height: 220px;
+    height: 220px;
 }
 
-/* Verticales más pequeñas */
 .foto.vertical {
     width: 30%;
-    max-height: 260px;
+    height: 260px;
 }
 
-.foto:nth-child(odd) {
+/* efecto collage */
+.foto:not(.activa):nth-child(odd) {
     transform: translateY(-4px);
 }
 
-.foto:nth-child(even) {
+.foto:not(.activa):nth-child(even) {
     transform: translateY(4px);
 }
 
-.foto:hover {
+.foto:not(.activa):hover {
     transform: scale(1.05);
     z-index: 5;
 }
 
-
+/* ===== MODO PANTALLA COMPLETA ===== */
 
 .foto.activa {
     position: fixed;
@@ -418,58 +416,41 @@ h4{
     width: 100vw !important;
     height: 100vh !important;
 
-    max-width: none !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
     object-fit: contain;
 
     z-index: 1001;
     border-radius: 0;
     box-shadow: none;
-    background: transparent;
+
+    transform: none !important;
+    animation: fadeIn 0.25s ease;
 
     cursor: zoom-out;
-
-    /* 🔑 ESTO ES LO QUE LO ARREGLA */
-    transform: none !important;
-    animation: none !important;
 }
 
-
-.foto.activa {
-    animation: fadeIn 0.25s ease;
-}
-
+/* Animación segura (sin transform) */
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-
-
-body.modal-abierto {
-    overflow: hidden;
-}
-
-
+/* ===== OVERLAY ===== */
 
 .overlay {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.65);
     z-index: 1000;
+    display: none;   /* 🔑 CLAVE */
 }
 
 .overlay.activo {
     display: block;
 }
 
-
-.foto {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Bloquea scroll */
+body.modal-abierto {
+    overflow: hidden;
 }
 
 

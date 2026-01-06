@@ -113,14 +113,14 @@
         <img src="camara.png" alt="imgcámara" width="120">
 
         <div class="galeria-collage">
-    <img src="G-1.jpg" class="foto horizontal">
-    <img src="G-2.jpg" class="foto vertical">
-    <img src="G-3.jpg" class="foto vertical">
-    <img src="G-4.jpg" class="foto horizontal">
-    <img src="G-5.jpeg" class="foto vertical">
-    <img src="G-6.jpeg" class="foto vertical">
-    <img src="G-7.jpeg" class="foto vertical">
-</div>
+            <img src="G-1.jpg" class="foto horizontal">
+            <img src="G-2.jpg" class="foto vertical">
+            <img src="G-3.jpg" class="foto vertical">
+            <img src="G-4.jpg" class="foto horizontal">
+            <img src="G-5.jpeg" class="foto vertical">
+            <img src="G-6.jpeg" class="foto vertical">
+            <img src="G-7.jpeg" class="foto vertical">
+        </div>
 
 
     </div>
@@ -178,8 +178,12 @@
 
 
 
+
+
+<div class="overlay"></div>
+
 <script>
-    const fotos = document.querySelectorAll('.galeria-collage .foto');
+    const fotos = document.querySelectorAll('.foto');
     const overlay = document.querySelector('.overlay');
 
     function cerrarTodo() {
@@ -198,18 +202,13 @@
                 cerrarTodo();
                 foto.classList.add('activa');
                 overlay.classList.add('activo');
-                document.body.classList.add('modal-abierto'); // 🔑
+                document.body.classList.add('modal-abierto');
             }
         });
     });
 
     overlay.addEventListener('click', cerrarTodo);
 </script>
-
-
-
-<div class="overlay"></div>
-
 
 
 </body>
