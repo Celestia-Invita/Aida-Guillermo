@@ -205,13 +205,34 @@ window.addEventListener('load', actualizarSlideCentral);
 
 <script>
     const fotos = document.querySelectorAll('.galeria-collage .foto');
+    const overlay = document.querySelector('.overlay');
+
+    function cerrarTodo() {
+        fotos.forEach(f => f.classList.remove('activa'));
+        overlay.classList.remove('activo');
+    }
 
     fotos.forEach(foto => {
-        foto.addEventListener('click', () => {
-            foto.classList.toggle('activa');
+        foto.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            // si ya está abierta, se cierra
+            if (foto.classList.contains('activa')) {
+                cerrarTodo();
+            } else {
+                cerrarTodo(); // cerramos cualquier otra
+                foto.classList.add('activa');
+                overlay.classList.add('activo');
+            }
         });
     });
+
+    // clic fuera de la imagen
+    overlay.addEventListener('click', cerrarTodo);
 </script>
+
+
+<div class="overlay"></div>
 
 
 </body>
