@@ -344,13 +344,25 @@ h3{
 h4{
     color: #4a2e24;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-left: 10px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif  ;
     font-size: 18px;
     font-weight:normal ;
     font-style: normal;
 }
+
+h4-b{
+    color: #4a2e24;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif  ;
+    font-size: 18px;
+    font-weight:bold ;
+    font-style: normal;
+}
+
 
 .p-conf{
     color: #4a2e24;
@@ -385,12 +397,12 @@ h4{
 /* Tamaños collage */
 .foto.horizontal {
     width: 60%;
-    height: 220px;
+    max-height: 220px;
 }
 
 .foto.vertical {
     width: 30%;
-    height: 260px;
+    max-height: 220px;
 }
 
 /* efecto collage */
