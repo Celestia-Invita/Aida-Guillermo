@@ -413,23 +413,26 @@ h4{
 
 .foto.activa {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1) !important;
+    inset: 0; /* top, right, bottom, left = 0 */
 
-    width: auto !important;
-    height: auto !important;
-
-    max-width: 92vw;
-    max-height: 92vh;
-
+    margin: auto;
     z-index: 1001;
-    border-radius: 20px;
-    cursor: zoom-out;
 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    background: #fff;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    max-width: 100vw;
+    max-height: 100vh;
+
+    object-fit: contain; /* 🔑 clave: se ve completa */
+
+    border-radius: 0;
+    background: transparent;
+
+    box-shadow: none;
+    cursor: zoom-out;
 }
+
 
 .overlay {
     position: fixed;
@@ -440,6 +443,26 @@ h4{
 }
 .overlay.activo {
     display: block;
+}
+
+
+.foto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto.activa {
+    animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 
