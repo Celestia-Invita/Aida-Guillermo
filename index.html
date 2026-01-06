@@ -40,12 +40,7 @@
         </video>
    </div>
 
-       <div class="caja-video">
-        <video width="100%" controls>
-            <source src="video-comp2.mp4" type="video/mp4">
-        </video>
-   </div>
-
+ 
     <div class="caja-t1">
         <h1 data-aos="zoom-in" data-aos-duration="3000">¡Nos casamos!</h1> <br>
         <p class="cursiva">Acompáñanos a dar el SÍ más importante de nuestras vidas.</p>
@@ -189,32 +184,82 @@
 <div class="overlay"></div>
 
 <script>
-    const fotos = document.querySelectorAll('.foto');
+    const fotos = Array.from(document.querySelectorAll('.foto'));
     const overlay = document.querySelector('.overlay');
+
+    let fotoActual = null;
+    let startX = 0;
+    let startY = 0;
+
+    function abrirFoto(foto) {
+        cerrarTodo();
+        foto.classList.add('activa');
+        overlay.classList.add('activo');
+        document.body.classList.add('modal-abierto');
+        fotoActual = fotos.indexOf(foto);
+    }
 
     function cerrarTodo() {
         fotos.forEach(f => f.classList.remove('activa'));
         overlay.classList.remove('activo');
         document.body.classList.remove('modal-abierto');
+        fotoActual = null;
     }
 
-    fotos.forEach(foto => {
+    function mostrarFoto(indice) {
+        if (indice < 0 || indice >= fotos.length) return;
+        fotos.forEach(f => f.classList.remove('activa'));
+        fotos[indice].classList.add('activa');
+        fotoActual = indice;
+    }
+
+    fotos.forEach((foto, index) => {
         foto.addEventListener('click', (e) => {
             e.stopPropagation();
-
             if (foto.classList.contains('activa')) {
                 cerrarTodo();
             } else {
+                abrirFoto(foto);
+            }
+        });
+
+        /* ===== GESTOS ===== */
+        foto.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        foto.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+
+            const dx = endX - startX;
+            const dy = endY - startY;
+
+            const absX = Math.abs(dx);
+            const absY = Math.abs(dy);
+
+            // 🔽 swipe vertical → cerrar
+            if (absY > absX && absY > 50) {
                 cerrarTodo();
-                foto.classList.add('activa');
-                overlay.classList.add('activo');
-                document.body.classList.add('modal-abierto');
+            }
+
+            // ▶ swipe horizontal
+            if (absX > absY && absX > 50) {
+                if (dx < 0) {
+                    // izquierda → siguiente
+                    mostrarFoto(fotoActual + 1);
+                } else {
+                    // derecha → anterior
+                    mostrarFoto(fotoActual - 1);
+                }
             }
         });
     });
 
     overlay.addEventListener('click', cerrarTodo);
 </script>
+
 
 
 </body>
