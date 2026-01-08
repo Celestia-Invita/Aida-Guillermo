@@ -17,7 +17,7 @@ body{
 
 .caja-video{
     padding-top:10%;
-    padding-bottom: 15%;
+    padding-bottom: 18%;
 }
 
 .caja-t1{
@@ -322,7 +322,32 @@ h3{
     ) 1;
 }
 
+.cuenta {
+    display: inline-block;
+    padding: 6px 18px;
+    margin-bottom: 14px;
 
+    font-family:"Aref Ruqaa", sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    
+
+    color: #4a2e24;
+
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+
+    border-image: linear-gradient(
+        90deg,
+        transparent,
+        #7a5c1b,
+        #d4af37,
+        #fff1a8,
+        #d4af37,
+        #7a5c1b,
+        transparent
+    ) 1;
+}
 
 .anotacion{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
